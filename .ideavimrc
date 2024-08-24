@@ -1,0 +1,122 @@
+" Plug 'preservim/nerdtree'
+
+set relativenumber
+set showmode
+set incsearch
+" set nu
+set ignorecase
+set smartcase
+set clipboard+=unnamed
+
+" Set leader key to space
+let mapleader = " "
+
+" terminal
+nnoremap <C-/> :action ActivateTerminalToolWindow<CR>
+" nnoremap <leader>t :action Terminal.OpenInTerminal<CR>
+nnoremap <C-/> :action Terminal.OpenInTerminal<CR>
+
+" zen-mode
+nnoremap <leader>z :action ToggleDistractionFreeMode<CR>
+
+" find
+nnoremap <C-f> :action GotoFile<CR>
+nnoremap <C-r> :action RecentFiles<CR>
+
+" Do things without affecting the registers
+nnoremap x "_x
+nnoremap <leader>p "12p
+nnoremap <leader>P "12P
+vnoremap <leader>p "12p
+nnoremap <leader>c "_c
+nnoremap <leader>C "_C
+vnoremap <leader>c "_c
+vnoremap <leader>C "_C
+nnoremap <leader>d "_d
+nnoremap <leader>D "_D
+vnoremap <leader>d "_d
+vnoremap <leader>D "_D
+
+" Increment/decrement numbers
+nnoremap <leader>+ <C-a>
+nnoremap <leader>- <C-x>
+
+" navigation
+nnoremap J }
+nnoremap K {
+
+" Select all
+nnoremap <C-a> ggVG
+
+" Jumplist
+nnoremap <C-m> <C-i>
+
+" New tab
+nnoremap te :tabedit<CR>
+nnoremap <TAB> :action PreviousTab<CR>
+nnoremap <S-TAB> :action NextTab<CR>
+
+" Split window
+nnoremap sv :action SplitVertically<CR>
+nnoremap ss :action SplitHorizontally<CR>
+
+" code selection
+nnoremap <A-j> :action MoveLineDown<CR>
+nnoremap <A-k> :action MoveLineUp<CR>
+
+" Move window
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+" Resize window
+nnoremap <C-w><left> <C-w>
+nnoremap <C-w><right> <C-w>>
+nnoremap <C-w><up> <C-w>+
+nnoremap <C-w><down> <C-w>-
+
+" Insert mode
+inoremap jk <Esc>
+inoremap kj <Esc>
+
+" run
+nnoremap <leader>rc :action ContextRun<CR>
+" nnoremap <leader>rx :action ChooseRunConfiguration<CR>
+" nnoremap <leader>rr :action Rerun<CR>
+nnoremap <leader>rt :action RunTests<CR>
+nnoremap <leader>rs :action Stop<CR>
+
+" code interactions
+nnoremap gcc :action CommentByLineComment<CR>
+nnoremap gcc :action CommentByBlockComment<CR>
+" nnoremap <leader>r :action RenameElement<CR>
+nnoremap <leader>f :action ReformatCode<CR>
+
+"---------- plugins ----------
+Plug 'preservim/nerdtree'
+map <C-t> :NERDTree<CR>
+":NERDTreeFocus
+":NERDTreeToggle
+map <C-c> :NERDTreeClose<CR>
+":NERDTreeFind
+":NERDTreeRefreshRoot
+
+
+
+" nmap <leader>e :NERDTreeToggle<CR>
+" vmap gcc <plug>NERDCommenterToggle
+" nmap gcc <plug>NERDCommenterToggle
+
+" " easy motion
+" Plug 'easymotion/vim-easymotion'
+" map <leader>J <Plug>(easymotion-s)
+" map <leader>j <Plug>(easymotion-f)
+
+" nmap <leader>n :NERDTreeFocus<CR>
+
+" " Open/close file explorer
+" nnoremap <leader>e :action ActivateProjectToolWindow<CR>
+"
+" " Close Project Tool Window
+" nnoremap <leader>e :action HideAllWindows<CR>
